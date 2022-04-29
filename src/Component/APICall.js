@@ -27,7 +27,7 @@ class APICall extends React.Component {
 	render() {
 		const { DataisLoaded, items } = this.state;
         const datum=items.data;
-        
+        localStorage.setItem('Users',JSON.stringify(datum));
 		if (!DataisLoaded) return <div>
 			<h1>Wait for some time.... </h1> </div> ;
 
