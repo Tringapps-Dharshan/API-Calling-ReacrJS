@@ -1,10 +1,43 @@
-.App {
-  text-align: center;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion{
+  width: 100px;
+}
+.item{
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+  margin-bottom: 2px;
+  padding: 2px 20px;
+}
+.title{
+  color:whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.content{
+  color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.content.show{
+  height: auto;
+  max-height: 300px;
+  transition: all 0.5s;
+}
+img{
+  border-radius: 2px;
+}
+.details{
+  line-height: 40px;
   padding: 10px;
 }
-.heading{
-  padding: 30px;
-}
-*{
-  margin: 0;
+table{
+  padding:10px 10px;
 }
