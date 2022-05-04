@@ -20,9 +20,9 @@ function App() {
       .then((result) => {
         setIsLoaded(true);
         setData(result.data);
-      }, (error) => {
+      }, () => {
         setIsLoaded(true);
-        setError(error);
+        setError('Error');
       })
 
   }, [])
