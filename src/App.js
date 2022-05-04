@@ -8,10 +8,11 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState([]);
   const domain = 'https://reqres.in/';
-  const toggle = (i) => {
+  const toggle = (i,element) => {
     if (selected === i) {
       return setSelected(null)
     }
+    localStorage.setItem('currentUser',JSON.stringify(element))
     setSelected(i)
   }
   useEffect(() => {
@@ -38,7 +39,7 @@ function App() {
           {
             data.map((element, i) => {
               return <div className='item' key={element.id}>
-                <div className='title' onClick={() => toggle(i)}>
+                <div className='title' onClick={() => toggle(i,element)}>
                   <h2>{element.first_name}</h2>
                   <span>{selected === i ? '-' : '+'}</span>
                 </div>
