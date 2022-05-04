@@ -8,11 +8,11 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState([]);
   const domain = 'https://reqres.in/';
-  const toggle = (i,element) => {
+  const toggle = (i, element) => {
     if (selected === i) {
       return setSelected(null)
     }
-    localStorage.setItem('currentUser',JSON.stringify(element))
+    localStorage.setItem('currentUser', JSON.stringify(element))
     setSelected(i)
   }
   useEffect(() => {
@@ -39,7 +39,7 @@ function App() {
           {
             data.map((element, i) => {
               return <div className='item' key={element.id}>
-                <div className='title' onClick={() => toggle(i,element)}>
+                <div className='title' onClick={() => toggle(i, element)}>
                   <h2>{element.first_name}</h2>
                   <span>{selected === i ? '-' : '+'}</span>
                 </div>
@@ -47,14 +47,16 @@ function App() {
                   selected === i ? 'content show' : 'content'
                 }>
                   <table>
-                    <tr>
-                      <td><img src={element.avatar} alt={element.first_name} /></td>
-                      <td className='details'>
-                        First name: {element.first_name}<br/>
-                        Last name: {element.last_name}<br/>
-                        Email: {element.email}<br/>
-                      </td>
-                    </tr>
+                    <tbody>
+                      <tr>
+                        <td><img src={element.avatar} alt={element.first_name} /></td>
+                        <td className='details'>
+                          First name: {element.first_name}<br />
+                          Last name: {element.last_name}<br />
+                          Email: {element.email}<br />
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
                 </div>
               </div>
